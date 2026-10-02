@@ -1,0 +1,157 @@
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.problem-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 1050px;
+}
+
+.problem-table th {
+    padding: 13px 20px;
+
+    background: #fafafa;
+    border-bottom: 1px solid var(--border);
+
+    color: var(--text-secondary);
+
+    font-size: 12px;
+    font-weight: 600;
+    text-align: left;
+    white-space: nowrap;
+}
+
+.problem-table td {
+    padding: 15px 20px;
+
+    border-bottom: 1px solid var(--border);
+
+    color: var(--text-secondary);
+
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+.problem-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.problem-table tbody tr {
+    transition: background 0.15s ease;
+}
+
+.problem-table tbody tr:hover {
+    background: #fafafa;
+}
+
+.company-cell {
+    color: var(--text);
+    font-weight: 550;
+}
+
+.problem-title {
+    color: var(--text);
+    font-weight: 550;
+}
+
+.problem-link {
+    color: var(--accent);
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.problem-link:hover {
+    text-decoration: underline;
+}
+
+/* Difficulty */
+
+.difficulty,
+.status {
+    display: inline-flex;
+    align-items: center;
+
+    padding: 4px 9px;
+
+    border-radius: 999px;
+
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.difficulty-easy {
+    color: #15803d;
+    background: #dcfce7;
+}
+
+.difficulty-medium {
+    color: #b45309;
+    background: #fef3c7;
+}
+
+.difficulty-hard {
+    color: #b91c1c;
+    background: #fee2e2;
+}
+
+/* Status */
+
+.status-solved-without-help {
+    color: #15803d;
+    background: #dcfce7;
+}
+
+.status-solved-with-help {
+    color: #2563eb;
+    background: #dbeafe;
+}
+
+.status-yet-to-solve {
+    color: #b45309;
+    background: #fef3c7;
+}
+
+.status-could-not-solve {
+    color: #b91c1c;
+    background: #fee2e2;
+}
+
+/* Actions */
+
+.action-buttons {
+    display: flex;
+    gap: 6px;
+}
+
+.table-action {
+    padding: 6px 10px;
+
+    border: 1px solid var(--border);
+    border-radius: 6px;
+
+    background: white;
+    color: var(--text-secondary);
+
+    font-size: 12px;
+    font-weight: 500;
+
+    transition:
+        background 0.15s ease,
+        border-color 0.15s ease,
+        color 0.15s ease;
+}
+
+.table-action:hover {
+    background: #f9fafb;
+    border-color: var(--border-hover);
+    color: var(--text);
+}
+
+.delete-action:hover {
+    color: var(--danger);
+    border-color: #fecaca;
+    background: #fef2f2;
+}
