@@ -1,4 +1,4 @@
--- V1__seed_companies_and_topics.sql
+-- V2__seed_companies_and_topics.sql
 
 INSERT INTO company (company_name) VALUES
                                        ('Google'),
@@ -16,7 +16,9 @@ INSERT INTO company (company_name) VALUES
                                        ('Stripe'),
                                        ('PayPal'),
                                        ('NVIDIA'),
-                                       ('OpenAI');
+                                       ('OpenAI')
+    ON DUPLICATE KEY UPDATE
+                         company_name = company_name;
 
 
 INSERT INTO topic (topic_name) VALUES
@@ -45,4 +47,6 @@ INSERT INTO topic (topic_name) VALUES
                                    ('Bit Manipulation'),
                                    ('Intervals'),
                                    ('Recursion'),
-                                   ('Divide and Conquer');
+                                   ('Divide and Conquer')
+    ON DUPLICATE KEY UPDATE
+                         topic_name = topic_name;
