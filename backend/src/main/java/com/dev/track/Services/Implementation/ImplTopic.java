@@ -22,7 +22,11 @@ public class ImplTopic implements TopicService {
         Optional<Topic> optional = topicRepository.findByTopicName(topicName);
 
         if (optional.isPresent()) {
-            throw new DuplicateResourceException("Topic with name '" + topicName + "' already exists");
+            Topic topic = optional.get();
+
+            if(topic.getTopicName().toLowerCase().equals(topicName.toLowerCase())) {
+                throw new DuplicateResourceException("Topic with name '" + topicName + "' already exists");
+            }
         }
 
         Topic topic = new Topic();

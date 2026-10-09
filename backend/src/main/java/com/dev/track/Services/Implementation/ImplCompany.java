@@ -8,6 +8,7 @@ import com.dev.track.Services.CompanyService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Locale;
 import java.util.Optional;
 
 @Service
@@ -23,10 +24,13 @@ public class ImplCompany implements CompanyService {
         Optional<Company> company =
                 companyRepository.findByCompanyName(companyName);
 
-        if (company.isPresent()) {
-            throw new DuplicateResourceException(
-                    "Company with name '" + companyName + "' already exists"
-            );
+        if(company.isPresent()) {
+            Company existingCompany = company.get();
+             if(existingCompany.getCompanyName().toLowerCase().equals(companyName.toLowerCase())) {
+                 throw new DuplicateResourceException(
+                         "Company with name '" + companyName + "' already exists"
+                 );
+             }
         }
 
         Company newCompany = new Company();
